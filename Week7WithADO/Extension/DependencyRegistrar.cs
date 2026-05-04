@@ -18,11 +18,13 @@ namespace Week7WithADO.Extensions
             services.AddScoped<IPatientRepository, PatientRepository>();
             services.AddScoped<IDoctorRepository, DoctorRepository>();
             services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+            services.AddScoped<IAuthRepository, AuthRepository>();
 
             //  Services
             services.AddScoped<IPatientService, PatientService>();
             services.AddScoped<IDoctorService, DoctorService>();
             services.AddScoped<IAppointmentService, AppointmentService>();
+            services.AddScoped<IAuthService, AuthService>();
 
             return services;
         }

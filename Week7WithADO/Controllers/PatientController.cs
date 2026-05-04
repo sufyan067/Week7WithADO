@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Week7WithADO.Models;
 using Week7WithADO.Services;
 
@@ -14,13 +15,14 @@ namespace Week7WithADO.Controllers
         {
             _service = service;
         }
-
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetPatients()
         {
             var data = await _service.GetPatients();
             return Ok(data);
         }
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPatientById(int id)
         {
