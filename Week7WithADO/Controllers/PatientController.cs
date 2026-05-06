@@ -5,6 +5,7 @@ using Week7WithADO.Services;
 
 namespace Week7WithADO.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class PatientController: ControllerBase
@@ -15,14 +16,12 @@ namespace Week7WithADO.Controllers
         {
             _service = service;
         }
-        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetPatients()
         {
             var data = await _service.GetPatients();
             return Ok(data);
         }
-        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPatientById(int id)
         {
@@ -40,6 +39,7 @@ namespace Week7WithADO.Controllers
 
             return CreatedAtAction(nameof(GetPatientById), new { id = id }, model);
         }
+        
         [HttpPut]
         public async Task<IActionResult> UpdatePatient(UpdatePatientModel model)
         {

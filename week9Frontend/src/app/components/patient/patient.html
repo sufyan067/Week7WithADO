@@ -1,0 +1,39 @@
+<h2>Patient Actions</h2>
+<hr>
+<button (click)="getPatients()">Get Patients</button>
+<br><br>
+
+
+<h3>Create Patient</h3>
+
+<form [formGroup]="form" (ngSubmit)="createPatient()">
+    <input formControlName="FirstName" placeholder="First Name"><br><br>
+    <input formControlName="LastName" placeholder="Last Name"><br><br>
+    <input formControlName="Email" placeholder="Email"><br><br>
+    <input formControlName="City" placeholder="City"><br><br>
+    <input formControlName="PhoneNumber" placeholder="Phone"><br><br>
+    <input type="date" formControlName="DateOfBirth"><br><br>
+    <button type="submit">Create</button>
+</form>
+<br><br>
+<h3>Update Patient</h3>
+
+<form [formGroup]="updateForm" (ngSubmit)="updatePatient()">
+    <input formControlName="patientId" placeholder="Patient ID"><br><br>
+
+    <input formControlName="FirstName" placeholder="First Name"><br><br>
+    <input formControlName="LastName" placeholder="Last Name"><br><br>
+    <input formControlName="Email" placeholder="Email"><br><br>
+    <input formControlName="City" placeholder="City"><br><br>
+    <input formControlName="PhoneNumber" placeholder="Phone"><br><br>
+    <input type="date" formControlName="DateOfBirth"><br><br>
+    <button type="submit">Update</button>
+    <br><br>
+    <h3>Delete Patient</h3>
+    <input formControlName="patientId" placeholder=" Patient ID for Deletion"><br><br>
+    <button (click)="deletePatient()">Delete</button>
+    <br><br>
+    <input formControlName="patientId" placeholder=" Patient ID for Retrieval"><br><br>
+    <button (click)="getPatientById()">Get Patient By ID</button>
+    <br><br>
+</form>
