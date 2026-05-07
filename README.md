@@ -81,6 +81,16 @@ Centralized error handling is implemented using Angular Interceptor:
 UI rendering can be extended in future iterations.
 
 ---
+
+##  Authorization Scope
+
+- Patient-related endpoints have been secured using `[Authorize]` and are fully integrated with JWT-based authentication.
+- Appointment and Doctor endpoints were implemented in a previous phase (Week 7) and are currently not protected with authorization.
+
+ This separation was maintained intentionally to focus on implementing and demonstrating authentication and authorization flow for a specific module (Patient   Management) in this phase.
+
+ --- 
+ 
 ##  Key Concepts Learned
 
 - JWT Authentication
